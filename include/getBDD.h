@@ -6,3 +6,4 @@ void getWord(char* bddName, char words[TOTAL_WORDS][MAX_WORD_LENGTH]);
 int checkValidWord(char* word, char words[TOTAL_WORDS][MAX_WORD_LENGTH]);
 void checkLetters(char* word,char* guess, char* try);
 void displayColorLetter(char* word, char* try);
+void filtre(int lettreTrouve,int lettrePasCount, int bonPlacement[5] ,char* bddName,char* lettreBon[5],char*lettreMauvaise[21] , char* words[TOTAL_WORDS][MAX_WORD_LENGTH]);

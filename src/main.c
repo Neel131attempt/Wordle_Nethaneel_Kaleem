@@ -55,6 +55,7 @@ int main()
 				printf("you have won\n");
 				break;
 			}
+			filtre(lettreTrouve, lettrePasCount, bonPlacement, bddName, lettreBon, lettreMauvaise, words[TOTAL_WORDS][MAX_WORD_LENGTH]);
 		}
 		if(is_victory)
 		{

@@ -113,7 +113,11 @@ void checkLetters(char* word,char* guess, char* try)
 {
 	int wordCount[26] = {0}; 
     int guessCount[26] = {0};
-
+char lettreBon[5];
+char lettreMauvaise[21];
+int bonPlacement[5];
+int lettreTrouve = 0 ;
+int lettrePasCount = 0;
     for (int i = 0; i < MAX_WORD_LENGTH - 1; i++) {
         wordCount[word[i] - 'a']++;
         guessCount[guess[i] - 'a']++;
@@ -124,7 +128,10 @@ void checkLetters(char* word,char* guess, char* try)
 		{
 			try[i]='v';
 			wordCount[word[i] - 'a']--; 
-            guessCount[guess[i] - 'a']--; 
+           guessCount[guess[i] - 'a']--;
+	   lettreBon[i] = guess[i];
+	   bonPlacement[lettreTrouve] = i;
+	   lettreTrouve++;
 		}
 	}
 	for (int i = 0; i < MAX_WORD_LENGTH - 1; i++) 
@@ -134,7 +141,9 @@ void checkLetters(char* word,char* guess, char* try)
             { 
                 try[i] = 'o';
                 wordCount[guess[i] - 'a']--;
-            }
+		lettreMauvaise[i] = guess[i]; 
+            lettrePasCount++;
+	    }
         }
     }
 }
